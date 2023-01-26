@@ -3,6 +3,7 @@ using MyPortfolio.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddControllersWithViews();
 // Add services to the container.
 builder.Services.AddDbContext<MyPortfolioContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DataContext")));

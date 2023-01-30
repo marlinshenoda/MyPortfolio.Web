@@ -1,5 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MyPortfolio.Data.Repository;
+using MyPortoflio.Core.Entities;
 using MyPortoflio.Web.Models;
+using MyPortoflio.Web.Views.ViewModel;
 using System.Diagnostics;
 
 namespace MyPortoflio.Web.Controllers
@@ -7,15 +10,24 @@ namespace MyPortoflio.Web.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IunitOfWork<Owner> _owner;
+        private readonly IunitOfWork<PortfolioItem> _portfolio;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger,IunitOfWork<Owner> owner,IunitOfWork<PortfolioItem> portfolio)   
         {
             _logger = logger;
+            _owner = owner;
+            _portfolio = portfolio;
         }
 
         public IActionResult Index()
         {
-            return View();
+            var homeViewModel = new HomeViewModel
+            {
+                Owner=_owner.Entity.GetAll().First(),   
+                PortfolioItems=_portfolio.Entity.GetAll().ToList()   
+            };
+            return View(homeViewModel); 
         }
 
         public IActionResult Privacy()

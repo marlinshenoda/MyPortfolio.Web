@@ -12,14 +12,14 @@ using MyPortfolio.Data;
 namespace MyPortfolio.Data.Migrations
 {
     [DbContext(typeof(MyPortfolioContext))]
-    [Migration("20230126193034_init")]
-    partial class init
+    [Migration("20230130210004_uint")]
+    partial class @uint
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.0")
+                .HasAnnotation("ProductVersion", "6.0.8")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
@@ -77,7 +77,7 @@ namespace MyPortfolio.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("92b89e8c-94c2-4dc7-8774-fa4ab777d83f"),
+                            Id = new Guid("16029240-276b-4178-bff7-19bb5810c91d"),
                             Avatar = "M.jpg",
                             FullName = "Marlin Shenoda",
                             Profil = "Microsoft MVC / .NET Consultant"

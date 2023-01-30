@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace MyPortfolio.Data.Migrations
 {
-    public partial class init : Migration
+    public partial class @uint : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -60,7 +60,7 @@ namespace MyPortfolio.Data.Migrations
             migrationBuilder.InsertData(
                 table: "Owner",
                 columns: new[] { "Id", "AddressId", "Avatar", "FullName", "Profil" },
-                values: new object[] { new Guid("92b89e8c-94c2-4dc7-8774-fa4ab777d83f"), null, "M.jpg", "Marlin Shenoda", "Microsoft MVC / .NET Consultant" });
+                values: new object[] { new Guid("16029240-276b-4178-bff7-19bb5810c91d"), null, "M.jpg", "Marlin Shenoda", "Microsoft MVC / .NET Consultant" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Owner_AddressId",

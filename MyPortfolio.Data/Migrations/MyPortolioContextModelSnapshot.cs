@@ -4,20 +4,19 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using MyPortfolio.Data;
 
 #nullable disable
 
 namespace MyPortfolio.Data.Migrations
 {
-    [DbContext(typeof(MyPortfolioContext))]
-    partial class MyPortfolioContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(MyPortolioContext))]
+    partial class MyPortolioContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.8")
+                .HasAnnotation("ProductVersion", "6.0.13")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
@@ -75,10 +74,10 @@ namespace MyPortfolio.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("16029240-276b-4178-bff7-19bb5810c91d"),
+                            Id = new Guid("bb429593-bc77-4853-a24a-1e13b0df10b5"),
                             Avatar = "M.jpg",
-                            FullName = "Marlin Shenoda",
-                            Profil = "Microsoft MVC / .NET Consultant"
+                            FullName = "Khalid ESSAADANI",
+                            Profil = "Microsoft MVP / .NET Consultant"
                         });
                 });
 
@@ -103,7 +102,7 @@ namespace MyPortfolio.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("PortfolioItems");
+                    b.ToTable("PortfolioItem");
                 });
 
             modelBuilder.Entity("MyPortoflio.Core.Entities.Owner", b =>

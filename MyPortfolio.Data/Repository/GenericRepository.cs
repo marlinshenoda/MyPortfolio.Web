@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using MyPortfolio.Core.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,9 +9,10 @@ using System.Threading.Tasks;
 namespace MyPortfolio.Data.Repository
 {
     public class GenericRepository<T> : IGenericRepository<T> where T : class
-    { private readonly MyPortfolioContext _context;
+    {
+        private readonly MyPortolioContext _context;
         private DbSet<T> table = null;
-        public GenericRepository(MyPortfolioContext context)
+        public GenericRepository(MyPortolioContext context)
         {
             _context = context;
             table = _context.Set<T>();

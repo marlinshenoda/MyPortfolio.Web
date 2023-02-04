@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyPortfolio.Data.Repository
+namespace MyPortfolio.Core.Repository
 {
     public interface IunitOfWork<T>where T : class
     {

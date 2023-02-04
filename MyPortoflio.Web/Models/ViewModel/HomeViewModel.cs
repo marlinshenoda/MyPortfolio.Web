@@ -2,7 +2,7 @@
 
 using MyPortoflio.Core.Entities;
 
-namespace MyPortoflio.Web.Views.ViewModel
+namespace MyPortoflio.Web.Models.ViewModel
 {
     public class HomeViewModel
     {

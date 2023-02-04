@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace MyPortfolio.Data.Migrations
 {
-    public partial class @uint : Migration
+    public partial class db : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -24,7 +24,7 @@ namespace MyPortfolio.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "PortfolioItems",
+                name: "PortfolioItem",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false, defaultValueSql: "NEWID()"),
@@ -34,7 +34,7 @@ namespace MyPortfolio.Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_PortfolioItems", x => x.Id);
+                    table.PrimaryKey("PK_PortfolioItem", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -60,7 +60,7 @@ namespace MyPortfolio.Data.Migrations
             migrationBuilder.InsertData(
                 table: "Owner",
                 columns: new[] { "Id", "AddressId", "Avatar", "FullName", "Profil" },
-                values: new object[] { new Guid("16029240-276b-4178-bff7-19bb5810c91d"), null, "M.jpg", "Marlin Shenoda", "Microsoft MVC / .NET Consultant" });
+                values: new object[] { new Guid("bb429593-bc77-4853-a24a-1e13b0df10b5"), null, "M.jpg", "Khalid ESSAADANI", "Microsoft MVP / .NET Consultant" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Owner_AddressId",
@@ -74,7 +74,7 @@ namespace MyPortfolio.Data.Migrations
                 name: "Owner");
 
             migrationBuilder.DropTable(
-                name: "PortfolioItems");
+                name: "PortfolioItem");
 
             migrationBuilder.DropTable(
                 name: "Address");

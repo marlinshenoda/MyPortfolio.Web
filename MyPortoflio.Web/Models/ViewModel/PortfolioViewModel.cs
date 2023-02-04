@@ -1,5 +1,6 @@
-﻿namespace MyPortoflio.Web.Views.ViewModel
+﻿namespace MyPortoflio.Web.Models.ViewModel
 {
+#nullable disable
     public class PortfolioViewModel
     {
         public Guid Id { get; set; }

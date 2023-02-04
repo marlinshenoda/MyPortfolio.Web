@@ -1,8 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MyPortfolio.Core.Repository;
 using MyPortfolio.Data.Repository;
 using MyPortoflio.Core.Entities;
 using MyPortoflio.Web.Models;
-using MyPortoflio.Web.Views.ViewModel;
+using MyPortoflio.Web.Models.ViewModel;
 using System.Diagnostics;
 
 namespace MyPortoflio.Web.Controllers

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyPortfolio.Core.Repository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,14 +9,15 @@ namespace MyPortfolio.Data.Repository
 {
     public class UnitOfWork<T> : IunitOfWork<T> where T : class
     {
-        private readonly MyPortfolioContext _context;
+        private readonly MyPortolioContext _context;
         private IGenericRepository<T> _entity;
-      
-        public UnitOfWork(MyPortfolioContext context)
+
+        public UnitOfWork(MyPortolioContext context)
         {
             _context = context;
-        } 
-        public IGenericRepository<T> Entity {
+        }
+        public IGenericRepository<T> Entity
+        {
             get
             {
                 return _entity ?? (_entity = new GenericRepository<T>(_context));
@@ -24,7 +26,7 @@ namespace MyPortfolio.Data.Repository
         }
         public void Save()
         {
-            throw new NotImplementedException();
+            _context.SaveChanges();
         }
     }
 }
